@@ -1,14 +1,11 @@
-import Controller.ServiceUser;
-import Model.User;
+
+import Model.Manager;
+
 
 public class main {
     public static void main(String[] args) {
-        User admin = new User();
-        admin.setCpf("12345678911");
-        admin.setId(1);
-        admin.setName(null);
-
-        ServiceUser sUser = new ServiceUser();
-        System.out.print(sUser.Authenticator(admin));
+        Manager gilvanelson = new Manager();
+        gilvanelson.setPassword("123");
+        gilvanelson.autenticar("321");
     }
 }

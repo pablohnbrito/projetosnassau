@@ -4,7 +4,16 @@ public class User {
     private int id;
     private String name;
     private String cpf;
+    private int salario;
 
+
+    public int getSalario() {
+        return salario;
+    }
+
+    public void setSalario(int salario) {
+        this.salario = salario;
+    }
 
     public int getId() {
         return id;
@@ -29,5 +38,10 @@ public class User {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+    public String cargo(String cargo)  {
+        return "ele é um "+cargo;
+    }
 }
+
 
