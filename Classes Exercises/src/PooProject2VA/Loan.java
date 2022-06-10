@@ -1,46 +1,46 @@
 package PooProject2VA;
 
-public class Loan {
-    private String loanData;
-
-    private String loanDataDevolution;
+public class Loan extends Book{
     private int loanId;
-    private int bookId;
     private int userId;
+    private String loanData, devolutionData;
 
-
-    public Loan(String loanData, String loanDataDevolution, int bookId, int userId) {
-        this.loanData = loanData;
-        this.loanDataDevolution = loanDataDevolution;
-        this.bookId = bookId;
+    public Loan(String bookName, int year, String author, Boolean onLoa, int bookId, int loanId, String loanData, String devolutionData) {
+        super(bookName, year, author, onLoa, bookId);
+        this.loanId = loanId;
         this.userId = userId;
+        this.loanData = loanData;
+        this.devolutionData = devolutionData;
     }
 
-    @Override
-    public String toString() {
-        return "Loan{" +
-                "loanData='" + loanData + '\'' +
-                ", loanDataDevolution='" + loanDataDevolution + '\'' +
-                ", loanId=" + loanId +
-                ", bookId=" + bookId +
-                ", userId=" + userId +
-                '}';
-    }
-
-    public int getBookId() {
-        return bookId;
+    public int getLoanId() {
+        return loanId;
     }
 
     public int getUserId() {
         return userId;
     }
 
-    public String getLoanDataDevolution() {
-        return loanDataDevolution;
+    public String getLoanData() {
+        return loanData;
     }
 
-    public void setLoanDataDevolution(String loanDataDevolution) {
-        this.loanDataDevolution = loanDataDevolution;
+    public void setLoanData(String loanData) {
+        this.loanData = loanData;
     }
 
+    public String getDevolutionData() {
+        return devolutionData;
+    }
+
+    public void setDevolutionData(String devolutionData) {
+        this.devolutionData = devolutionData;
+    }
+
+    @Override
+    public void setOnLoan(boolean onLoan) {
+        super.setOnLoan(onLoan);
+        if (onLoan == false) System.out.println("O livro foi devolvido com sucesso!");
+        else System.out.println("Empréstimo realizado com sucesso.");
+    }
 }

@@ -13,7 +13,7 @@ public class Main {
         List<Book> books = new ArrayList<>();
         List<User> users = new ArrayList<>();
         List<Loan> loans = new ArrayList<>();
-        int x=1, y=1;
+        int x=1, y=1, z=1;
 
             while (true) {
                 System.out.println("--\tBem-vindo a Biblioteca Teca\t--");
@@ -40,7 +40,10 @@ public class Main {
                             books.add(new Book(bookName, bookYear, bookAuthor, false, x));
                             System.out.println("Deseja adicionar mais um livro? (S ou N)");
                             String answer = scan.next();
-                            if (answer.equals("n") || answer.equals("N")) break;
+                            if (answer.equals("n") || answer.equals("N")) {
+                                x++;
+                                break;
+                            }
                             else x++;
                         }
                         break;
@@ -55,7 +58,10 @@ public class Main {
                             users.add(new User(userName, y, cpf, bdate));
                             System.out.println("Deseja adicionar mais um usuário? (S ou N)");
                             String answer = scan.next();
-                            if (answer.equals("n") || answer.equals("N")) break;
+                            if (answer.equals("n") || answer.equals("N")) {
+                                y++;
+                                break;
+                            }
                             else y++;
                         }
                         break;
@@ -76,12 +82,17 @@ public class Main {
                             if (books.get(userLoanId-1).isOnLoan() == true) {
                                 System.out.println("O livro já está emprestado");
                             } else {
-                                loans.add(new Loan(dataLoan, dataDev, bookLoanId, userLoanId));
+                                loans.add(new Loan(books.get(bookLoanId-1).getBookName(), books.get(bookLoanId-1).getYear(), books.get(bookLoanId-1).getAuthor(), true,
+                                        bookLoanId, z, dataLoan, dataDev));
                                 books.get(userLoanId - 1).setOnLoan(true);
                             }
                             System.out.println("Deseja adicionar mais um livro? (S ou N)");
                             String answer = scan.next();
-                            if (answer.equals("n") || answer.equals("N")) break;
+                            if (answer.equals("n") || answer.equals("N")) {
+                                z++;
+                                break;
+                            }
+                            else z++;
                         }                    break;
                     case "4":
                         while (true) {
@@ -99,7 +110,8 @@ public class Main {
                                 if (offLoan.equals("s") || offLoan.equals("S")) break;
                             }
                             books.get(offBookId-1).setOnLoan(false);
-                            if (Integer.parseInt(devolutionData) <= Integer.parseInt(loans.get(offLoanId-1).getLoanDataDevolution())) System.out.println("Devolução dentro do prazo");
+                            loans.get(offLoanId-1).setOnLoan(false);
+                            if (Integer.parseInt(devolutionData) <= Integer.parseInt(loans.get(offLoanId-1).getDevolutionData())) System.out.println("Devolução dentro do prazo");
                             else System.out.println("Livro devolvido fora do prazo.");
                             System.out.println("Deseja devolver mais um livro? (S ou N)");
                             String answer = scan.next();
