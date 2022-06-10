@@ -7,13 +7,14 @@ public class LoanOld {
     private int loanId;
     private int bookId;
     private int userId;
+    private static int sequence = 0;
 
-
-    public LoanOld(String loanData, String loanDataDevolution, int bookId, int userId) {
+    //deprecated
+    public LoanOld(String loanData, String loanDataDevolution, int bookId) {
         this.loanData = loanData;
         this.loanDataDevolution = loanDataDevolution;
         this.bookId = bookId;
-        this.userId = userId;
+        this.userId = sequence++;
     }
 
     @Override

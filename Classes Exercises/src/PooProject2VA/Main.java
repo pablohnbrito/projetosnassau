@@ -23,7 +23,7 @@ public class Main {
                 System.out.println("3 - Solicitar um empréstimo de um livro: ");
                 System.out.println("4 - Devolver um um livro: ");
                 System.out.println("5 - Sair. ");
-                number = scan.next();
+                number = scan.nextLine();
 
 
 
@@ -32,14 +32,15 @@ public class Main {
                     case "1":
                         while (true) {
                             System.out.println("Digite o nome do livro: ");
-                            String bookName = scan.next();
+                            String bookName = scan.nextLine();
                             System.out.println("Digite o ano de publicação do livro: ");
-                            int bookYear = scan.nextInt();
+                            String bookYear1 = scan.nextLine();
+                            int bookYear = Integer.parseInt(bookYear1);
                             System.out.println("Digite o autor do livro: ");
-                            String bookAuthor = scan.next();
+                            String bookAuthor = scan.nextLine();
                             books.add(new Book(bookName, bookYear, bookAuthor, false, x));
                             System.out.println("Deseja adicionar mais um livro? (S ou N)");
-                            String answer = scan.next();
+                            String answer = scan.nextLine();
                             if (answer.equals("n") || answer.equals("N")) {
                                 x++;
                                 break;
@@ -50,11 +51,11 @@ public class Main {
                     case "2":
                         while (true) {
                             System.out.println("Digite o nome do usuário: ");
-                            String userName = scan.next();
+                            String userName = scan.nextLine();
                             System.out.println("Digite o CPF do usuário (usar somente números): ");
-                            String cpf = scan.next();
+                            String cpf = scan.nextLine();
                             System.out.println("Digite a data de nascimento do usuário: ");
-                            String bdate = scan.next();
+                            String bdate = scan.nextLine();
                             users.add(new User(userName, y, cpf, bdate));
                             System.out.println("Deseja adicionar mais um usuário? (S ou N)");
                             String answer = scan.next();
@@ -68,17 +69,19 @@ public class Main {
                     case "3":
                         while (true) {
                             System.out.println("Digite o id do usuário: ");
-                            int userLoanId = scan.nextInt();
+                            String userLoanId1 = scan.nextLine();
+                            int userLoanId = Integer.parseInt(userLoanId1);
                             if (users.get(userLoanId-1).getUserId() != userLoanId) {
                                 System.out.println("O usuário não existe");
                                 break;
                             }
                             System.out.println("Digite a data de locação: ");
-                            String dataLoan = scan.next();
+                            String dataLoan = scan.nextLine();
                             System.out.println("Digite a data de devolução: ");
-                            String dataDev = scan.next();
+                            String dataDev = scan.nextLine();
                             System.out.println("Digite o id do livro: ");
-                            int bookLoanId = scan.nextInt();
+                            String bookLoanId1 = scan.nextLine();
+                            int bookLoanId = Integer.parseInt(bookLoanId1);
                             if (books.get(userLoanId-1).isOnLoan() == true) {
                                 System.out.println("O livro já está emprestado");
                             } else {
@@ -87,7 +90,7 @@ public class Main {
                                 books.get(userLoanId - 1).setOnLoan(true);
                             }
                             System.out.println("Deseja adicionar mais um livro? (S ou N)");
-                            String answer = scan.next();
+                            String answer = scan.nextLine();
                             if (answer.equals("n") || answer.equals("N")) {
                                 z++;
                                 break;
@@ -97,16 +100,18 @@ public class Main {
                     case "4":
                         while (true) {
                             int offLoanId, offBookId;
-                            String devolutionData;
+                            String devolutionData, offLoanId1, offBookId1;
                             while (true) {
                                 System.out.println("Digite o id do livro: ");
-                                offBookId = scan.nextInt();
+                                offBookId1 = scan.nextLine();
+                                offBookId = Integer.parseInt(offBookId1);
                                 System.out.println("Digite a data da devolução do livro: ");
-                                devolutionData = scan.next();
+                                devolutionData = scan.nextLine();
                                 System.out.println("Digite o id do empréstimo: ");
-                                offLoanId = scan.nextInt();
+                                offLoanId1 = scan.nextLine();
+                                offLoanId = Integer.parseInt(offLoanId1);
                                 System.out.println("Você confirma a devolução do livro? (S ou N)");
-                                String offLoan = scan.next();
+                                String offLoan = scan.nextLine();
                                 if (offLoan.equals("s") || offLoan.equals("S")) break;
                             }
                             books.get(offBookId-1).setOnLoan(false);
@@ -114,13 +119,14 @@ public class Main {
                             if (Integer.parseInt(devolutionData) <= Integer.parseInt(loans.get(offLoanId-1).getDevolutionData())) System.out.println("Devolução dentro do prazo");
                             else System.out.println("Livro devolvido fora do prazo.");
                             System.out.println("Deseja devolver mais um livro? (S ou N)");
-                            String answer = scan.next();
+                            String answer = scan.nextLine();
                             if (answer.equals("n") || answer.equals("N")) break;
                         } break;
                     case "5":
                         System.out.println("Até mais!");
                         break;
                     default:
+                        System.out.println("Valor incorreto!");
                         continue;
 
                 }
@@ -130,4 +136,3 @@ public class Main {
     }
 
 }
-
