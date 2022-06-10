@@ -7,14 +7,24 @@ public class Book {
     private int year;
     private String author;
     private int bookId;
-    private static int sequence = 0;
+
+    private boolean onLoan;
 
 
-    public Book(String bookName, int year, String author) {
-        this.bookId = sequence++;
+    public Book(String bookName, int year, String author, Boolean onLoa, int bookId) {
         this.bookName = bookName;
         this.year = year;
         this.author = author;
+        this.onLoan = onLoan;
+        this.bookId = bookId;
+    }
+
+    public boolean isOnLoan() {
+        return onLoan;
+    }
+
+    public void setOnLoan(boolean onLoan) {
+        this.onLoan = onLoan;
     }
 
     public String getBookName() {
@@ -45,5 +55,14 @@ public class Book {
         this.author = author;
     }
 
-
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookName='" + bookName + '\'' +
+                ", year=" + year +
+                ", author='" + author + '\'' +
+                ", bookId=" + bookId +
+                ", onLoan=" + onLoan +
+                '}';
+    }
 }

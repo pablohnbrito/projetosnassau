@@ -5,21 +5,34 @@ public class Loan {
 
     private String loanDataDevolution;
     private int loanId;
-    private static int sequence = 0;
-    private boolean onLoan = false;
+    private int bookId;
+    private int userId;
 
-    public Loan(String loanData, String loanDataDevolution) {
-        this.loanId = sequence++;
+
+    public Loan(String loanData, String loanDataDevolution, int bookId, int userId) {
         this.loanData = loanData;
         this.loanDataDevolution = loanDataDevolution;
+        this.bookId = bookId;
+        this.userId = userId;
     }
 
-    public String getLoanData() {
-        return loanData;
+    @Override
+    public String toString() {
+        return "Loan{" +
+                "loanData='" + loanData + '\'' +
+                ", loanDataDevolution='" + loanDataDevolution + '\'' +
+                ", loanId=" + loanId +
+                ", bookId=" + bookId +
+                ", userId=" + userId +
+                '}';
     }
 
-    public void setLoanData(String loanData) {
-        this.loanData = loanData;
+    public int getBookId() {
+        return bookId;
+    }
+
+    public int getUserId() {
+        return userId;
     }
 
     public String getLoanDataDevolution() {
@@ -30,7 +43,4 @@ public class Loan {
         this.loanDataDevolution = loanDataDevolution;
     }
 
-    public void setOnLoan(boolean onLoan) {
-        this.onLoan = onLoan;
-    }
 }

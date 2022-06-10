@@ -5,11 +5,10 @@ public class User {
     private int userId;
     private String cpf;
     private String birthdate;
-    private static int sequence = 0;
 
-    public User(String userName, String cpf, String birthdate) {
+    public User(String userName, int userId, String cpf, String birthdate) {
         this.userName = userName;
-        this.userId = sequence++;
+        this.userId = userId;
         this.cpf = cpf;
         this.birthdate = birthdate;
     }
@@ -40,5 +39,15 @@ public class User {
 
     public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userName='" + userName + '\'' +
+                ", userId=" + userId +
+                ", cpf='" + cpf + '\'' +
+                ", birthdate='" + birthdate + '\'' +
+                '}';
     }
 }
