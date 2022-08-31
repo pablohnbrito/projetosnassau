@@ -14,6 +14,7 @@ public class Salario {
             int ht = scan.nextInt();
             System.out.println("Digite o valor por hora: ");
             double vph = scan.nextDouble();
+            scan.close();
             double salario = ht*vph;
             System.out.println("NÚMERO = " + id);
             System.out.println("SALÁRIO É = R$ " + df.format(salario));

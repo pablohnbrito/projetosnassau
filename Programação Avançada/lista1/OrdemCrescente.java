@@ -16,6 +16,7 @@ public class OrdemCrescente {
 
         System.out.println("Digite o terceiro valor: ");
         int n3 = scan.nextInt();
+        scan.close();
 
         if ((n1>n2) && (n1>n3)) {
             if (n2>n3) System.out.println(n3+"\n"+n2+"\n"+n1);

@@ -14,6 +14,7 @@ public class SalarioVendedor {
             double salarioFixo = scan.nextDouble();
             System.out.println("Digite o valor total das vendas do vendedor "+nomeVendedor+":");
             double vendas = scan.nextDouble();
+            scan.close();
             double salarioTotal = salarioFixo + (vendas*1.15);
             System.out.println("TOTAL = R$ "+df.format(salarioTotal));
     }
