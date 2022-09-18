@@ -7,7 +7,7 @@ public class Transporte {
     private String modelo;
     private double cargaMaxima, potencia;
 
-    public Transporte(int id, int ano, String modelo, Double cargaMaxima, Double potencia) {
+    public Transporte(int id, int ano, String modelo, double cargaMaxima, double potencia) {
         Id = id;
         this.ano = ano;
         this.modelo = modelo;
@@ -27,4 +27,5 @@ public class Transporte {
     public String leiaModelo() {
         return this.modelo;
     }
+
 }
