@@ -16,6 +16,38 @@ public abstract class Loja {
     public int getIdentificador() {
         return codigoDoItem;
     }
+
+    public int getCodigoDoItem() {
+        return codigoDoItem;
+    }
+
+    public void setCodigoDoItem(int codigoDoItem) {
+        this.codigoDoItem = codigoDoItem;
+    }
+
+    public String getNomeDoItem() {
+        return nomeDoItem;
+    }
+
+    public void setNomeDoItem(String nomeDoItem) {
+        this.nomeDoItem = nomeDoItem;
+    }
+
+    public String getDescricaoDoItem() {
+        return descricaoDoItem;
+    }
+
+    public void setDescricaoDoItem(String descricaoDoItem) {
+        this.descricaoDoItem = descricaoDoItem;
+    }
+
+    public double getValorDoItem() {
+        return valorDoItem;
+    }
+
+    public void setValorDoItem(double valorDoItem) {
+        this.valorDoItem = valorDoItem;
+    }
 }
 
 class Ferramenta extends Loja {
@@ -39,6 +71,21 @@ class Ferramenta extends Loja {
         else this.categoria = categoria;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public Integer getSerial() {
+        return serial;
+    }
+
+    public void setSerial(Integer serial) {
+        this.serial = serial;
+    }
 }
 
 class Alimento extends  Loja {
@@ -52,5 +99,13 @@ class Alimento extends  Loja {
     @Override
     public int getIdentificador() {
         return selo;
+    }
+
+    public Integer getSelo() {
+        return selo;
+    }
+
+    public void setSelo(Integer selo) {
+        this.selo = selo;
     }
 }
