@@ -1,9 +1,8 @@
-package Ex_17_Orientacao_Objetos;
+package lista2.com.Pessoa2;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import Ex_15_Orientacao_Objetos.Fisica;
 
 public class Disciplina {
 	

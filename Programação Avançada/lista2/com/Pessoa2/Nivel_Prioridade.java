@@ -1,4 +1,4 @@
-package Ex_17_Orientacao_Objetos;
+package lista2.com.Pessoa2;
 
 public enum Nivel_Prioridade {
 	

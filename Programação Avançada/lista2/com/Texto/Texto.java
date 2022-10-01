@@ -1,4 +1,4 @@
-package Ex_16_Orientacao_Objetos;
+package lista2.com.Texto;
 
 public class Texto {
 	

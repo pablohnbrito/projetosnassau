@@ -1,4 +1,4 @@
-package Ex_15_Orientacao_Objetos;
+package lista2.com.Pessoa;
 
 import java.util.ArrayList;
 
