@@ -23,6 +23,30 @@ public abstract class MeioDeTransporte {
     }
 
     protected abstract double consumo();
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public short getAno() {
+        return ano;
+    }
+
+    public void setAno(short ano) {
+        this.ano = ano;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
 }
 
 class Terrestre extends MeioDeTransporte {
@@ -37,5 +61,21 @@ class Terrestre extends MeioDeTransporte {
     @Override
     protected double consumo() {
         return getCarga_maxima()*potencia;
+    }
+
+    public int getQtdeRoda() {
+        return qtdeRoda;
+    }
+
+    public void setQtdeRoda(int qtdeRoda) {
+        this.qtdeRoda = qtdeRoda;
+    }
+
+    public double getPotencia() {
+        return potencia;
+    }
+
+    public void setPotencia(double potencia) {
+        this.potencia = potencia;
     }
 }
