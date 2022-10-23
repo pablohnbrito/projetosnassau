@@ -1,4 +1,4 @@
-package com.example.parkingcontrol;
+package com.api.parkingcontrol;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,5 +18,5 @@ public class ParkingControlApplication {
 		return "Parking Control working";
 	}
 }
-//vídeo parou em 50:58
+//vídeo parou em 1:18:06
 //https://www.youtube.com/watch?v=LXRU-Z36GEU&t=3059s

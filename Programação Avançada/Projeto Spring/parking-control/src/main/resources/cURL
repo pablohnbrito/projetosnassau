@@ -1,0 +1,12 @@
+curl --location --request POST 'http://localhost:8080/parking-spot' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "parkingSpotNumber": "205B",
+    "licensePlateCar": "RRS8562",
+    "brandCar": "audi",
+    "modelCar": "q5",
+    "colorCar": "black",
+    "responsibleName": "Nilo Rodrigues",
+    "apartment": "205",
+    "block": "B"
+}'
